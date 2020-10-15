@@ -32,6 +32,6 @@ public class Entity2D extends JPanel {
 		
 		Graphics2D g2 = (Graphics2D)g;
 		
-		g.drawImage( this.resource2D, 0, 0, this );
+		g2.drawImage( this.resource2D, 0, 0, this );
 	}
 }
