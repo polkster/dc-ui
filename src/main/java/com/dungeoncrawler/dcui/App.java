@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -16,7 +17,7 @@ public class App extends JFrame
 
 	private MainViewport viewport;
 	
-	public static void main( String[] args )
+	public static void main( String[] args ) throws IOException
     {
         new App(800, 600).setupUI();
     }
