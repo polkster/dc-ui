@@ -45,4 +45,14 @@ public abstract class Pane2D extends JPanel {
 	}
 	
 	protected abstract void loadResources();
+	public void hidePane () {
+		this.setVisible(false);
+	
+	
+	}
+	
+	public void hideCompletely() {
+		this.setSize(0, -1);
+	}
+
 }

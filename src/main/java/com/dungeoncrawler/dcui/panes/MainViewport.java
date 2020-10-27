@@ -24,7 +24,7 @@ public class MainViewport extends JPanel implements ComponentListener {
 	private static final int MIN_WIDTH = 800;
 	private static final int MIN_HEIGHT = 600;
 	
-	private JPanel leftPanel;
+	private Pane2D leftPanel;
 	private JPanel rightPanel;
 	private JPanel viewport;
 	private JTextArea bottomPane;
@@ -63,7 +63,12 @@ public class MainViewport extends JPanel implements ComponentListener {
 		add( this.right );
 		add( this.bottom );
 		add( this.viewport );
-	}
+		
+		this.hideRightPane(); 
+		this.hideLeftPane(); 
+		this.hideBottomPane();
+	}	
+		
 	
 	public void reRender() {
 		
@@ -145,5 +150,15 @@ public class MainViewport extends JPanel implements ComponentListener {
 		
 	}
 	
+	public void hideLeftPane () {
+		this.preferredWidthLeftPane = 0;
+	}
+
+	public void hideRightPane () {
+		this.preferredWidthRightPane = 0;
+	}
+	public void hideBottomPane () {
+		this.preferredHeightBottomPane = 0;
+	}
 	
 }

@@ -19,7 +19,7 @@ public class App extends JFrame
 	
 	public static void main( String[] args ) throws IOException
     {
-        new App(800, 600).setupUI();
+        new App(1024, 768 ).setupUI();
     }
     
     public App( int width, int height ) {

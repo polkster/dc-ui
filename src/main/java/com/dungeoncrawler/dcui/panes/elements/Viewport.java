@@ -8,7 +8,11 @@ import com.dungeoncrawler.dcui.panes.Pane2D;
 public class Viewport extends Pane2D {
 
 	private static final String RESOURCE_OGRE = "ogre.png";
-	
+	private static final String RESOURCE_OGRE2 = "ogre.jpg";
+	private static final String RESOURCE_GOBLIN = "goblin.png";	
+	private static final String RESOURCE_JOKER = "joker.gif";
+	private static final String RESOURCE_DARTH_VADER = "darth_vader.png";
+			
 	private static final long serialVersionUID = 1L;
 
 	public Viewport() {
@@ -19,11 +23,14 @@ public class Viewport extends Pane2D {
 	
 	protected void loadResources() {
 		
-		Entity2D ogre = new Entity2D(32, 32, loadImage( RESOURCE_OGRE ) );
-	
+		Entity2D ogre = new Entity2D(50, 50, loadImage( RESOURCE_OGRE2 ) );
+		Entity2D goblin = new Entity2D(50, 50, loadImage( RESOURCE_GOBLIN ) );
+		Entity2D Joker = new Entity2D(50, 50, loadImage( RESOURCE_JOKER ) );
+		Entity2D darth_vader = new Entity2D(50, 50, loadImage( RESOURCE_DARTH_VADER ) );
 		addEntity( ogre, 100, 100 );
-		
-		
+		addEntity( goblin, 100, 200);
+		addEntity( Joker, 100, 300);
+		addEntity( darth_vader, 100, 400);
 		doLayout();
 	}
 }
