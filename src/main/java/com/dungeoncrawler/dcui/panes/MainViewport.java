@@ -63,10 +63,6 @@ public class MainViewport extends JPanel implements ComponentListener {
 		add( this.right );
 		add( this.bottom );
 		add( this.viewport );
-		
-		this.hideRightPane(); 
-		this.hideLeftPane(); 
-		this.hideBottomPane();
 	}	
 		
 	
