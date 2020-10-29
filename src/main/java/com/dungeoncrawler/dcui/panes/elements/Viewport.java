@@ -3,6 +3,10 @@ package com.dungeoncrawler.dcui.panes.elements;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 
 import com.dungeoncrawler.dcui.entities.Entity2D;
 import com.dungeoncrawler.dcui.panes.Pane2D;
