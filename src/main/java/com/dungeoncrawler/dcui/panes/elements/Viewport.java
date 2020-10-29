@@ -1,6 +1,8 @@
 package com.dungeoncrawler.dcui.panes.elements;
 
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
 
 import com.dungeoncrawler.dcui.entities.Entity2D;
 import com.dungeoncrawler.dcui.panes.Pane2D;
@@ -32,5 +34,18 @@ public class Viewport extends Pane2D {
 		addEntity( Joker, 100, 300);
 		addEntity( darth_vader, 100, 400);
 		doLayout();
+	}
+
+	@Override
+	public void paint(Graphics g) {
+		// TODO Auto-generated method stub
+		super.paint(g);
+		
+		Font font = new Font( "Arial", Font.BOLD, 16 );
+		
+		g.setFont(font);
+		g.setColor( Color.white );
+		
+		g.drawString("(c) SandburgEvents 2020", 20, 30);
 	}
 }

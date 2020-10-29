@@ -64,9 +64,9 @@ public class MainViewport extends JPanel implements ComponentListener {
 		add( this.bottom );
 		add( this.viewport );
 		
-		this.hideRightPane(); 
+		//this.hideRightPane(); 
 		this.hideLeftPane(); 
-		this.hideBottomPane();
+		//this.hideBottomPane();
 	}	
 		
 	
@@ -152,7 +152,7 @@ public class MainViewport extends JPanel implements ComponentListener {
 	
 	public void hideLeftPane () {
 		this.preferredWidthLeftPane = 0;
-	}
+	}	
 
 	public void hideRightPane () {
 		this.preferredWidthRightPane = 0;
@@ -160,5 +160,8 @@ public class MainViewport extends JPanel implements ComponentListener {
 	public void hideBottomPane () {
 		this.preferredHeightBottomPane = 0;
 	}
-	
+	public void addTextToConsole (String text) {
+		this.bottomPane.append(text);
+		this.bottomPane.append("\n");
+	}
 }

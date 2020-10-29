@@ -59,5 +59,7 @@ public class App extends JFrame
     		
     		root.setLayout( new BorderLayout() );
     		root.add( this.viewport, BorderLayout.CENTER );
-    }
+    		this.viewport.addTextToConsole("Welcome To The Game!");
+    		this.viewport.addTextToConsole("This Is Your Inventory!");
+    }		
 }
