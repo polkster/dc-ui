@@ -24,6 +24,10 @@ public class Entity2D extends JPanel {
 		setSize( new Dimension( width, height ) );
 		setPreferredSize( new Dimension( this.width, this.height ) );
 	}
+	
+	public void moveLocation( int x, int y ) {
+		this.setLocation(x, y);
+	}
 
 	@Override
 	public void paint(Graphics g) {
