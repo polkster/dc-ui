@@ -4,12 +4,19 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+
+import javax.imageio.ImageIO;
 
 import com.dungeoncrawler.dcui.entities.Entity2D;
 import com.dungeoncrawler.dcui.panes.Pane2D;
 import com.dungeoncrawler.dcui.panes.actions.Actions;
 import com.dungeoncrawler.dcui.panes.actions.instructions.Instruction;
 import com.dungeoncrawler.dcui.panes.actions.instructions.MovementInstruction;
+import com.dungeoncrawler.dcui.panes.elements.maps.DungeonMap;
+import com.dungeoncrawler.dcui.panes.elements.maps.Map;
+import com.dungeoncrawler.dcui.util.Utility;
 
 public class Viewport extends Pane2D {
 
@@ -39,17 +46,20 @@ public class Viewport extends Pane2D {
 	private Entity2D joker;
 	private Entity2D darth_vader;
 	
+	private BufferedImage currentMap = null;
+	
 	public Viewport() {
 		
 		super();
 		setBackground(Color.BLACK);		
 		
 		this.actions = new Actions();
-		this.heartIcon = loadImage( RESOURCE_HEART ).getScaledInstance(40, 40, Image.SCALE_SMOOTH);
-		this.attackIcon = loadImage( RESOURCE_ATTACK ).getScaledInstance(40, 40, Image.SCALE_SMOOTH);
-		this.shieldIcon = loadImage( RESOURCE_SHIELD ).getScaledInstance(40, 40, Image.SCALE_SMOOTH);
+		this.heartIcon = Utility.loadImage( RESOURCE_HEART ).getScaledInstance(40, 40, Image.SCALE_SMOOTH);
+		this.attackIcon = Utility.loadImage( RESOURCE_ATTACK ).getScaledInstance(40, 40, Image.SCALE_SMOOTH);
+		this.shieldIcon = Utility.loadImage( RESOURCE_SHIELD ).getScaledInstance(40, 40, Image.SCALE_SMOOTH);
 		this.font = new Font(  "Courier", Font.BOLD, 20 );
 		
+		setupMap();
 		addActions();
 		startRendering();
 	}
@@ -57,17 +67,7 @@ public class Viewport extends Pane2D {
 	// HERE IS THE ASSIGNMENT!
 	private void addActions() {
 		
-		int x = 0;
-		int y = this.ogre.getY();
-		
-		for ( int i = 0; i < 30; i++ ) {
-			this.actions.addAction( new MovementInstruction( this.ogre, 500, x, 100));
-			x+= 10;
-		}
-		for ( int i =0; i < 30; i++ ) {
-			this.actions.addAction( new MovementInstruction( this.ogre, 500, x, y));
-			y+= 10;
-		}
+
 	}
 	
 	private void startRendering() {
@@ -128,24 +128,39 @@ public class Viewport extends Pane2D {
 	
 	protected void loadResources() {
 		
-		this.ogre = new Entity2D(50, 50, loadImage( RESOURCE_OGRE2 ) );
-		this.goblin = new Entity2D(50, 50, loadImage( RESOURCE_GOBLIN ) );
-		this.joker = new Entity2D(50, 50, loadImage( RESOURCE_JOKER ) );
-		this.darth_vader = new Entity2D(50, 50, loadImage( RESOURCE_DARTH_VADER ) );
-		
-		addEntity( this.ogre, 100, 100 );
-		addEntity( this.goblin, 100, 200);
-		addEntity( this.joker, 100, 300);
-		addEntity( this.darth_vader, 100, 400);
+//		this.ogre = new Entity2D(50, 50, loadImage( RESOURCE_OGRE2 ) );
+//		this.goblin = new Entity2D(50, 50, loadImage( RESOURCE_GOBLIN ) );
+//		this.joker = new Entity2D(50, 50, loadImage( RESOURCE_JOKER ) );
+//		this.darth_vader = new Entity2D(50, 50, loadImage( RESOURCE_DARTH_VADER ) );
+//		
+//		addEntity( this.ogre, 100, 100 );
+//		addEntity( this.goblin, 100, 200);
+//		addEntity( this.joker, 100, 300);
+//		addEntity( this.darth_vader, 100, 400);
 		
 		doLayout();
 	}
-
+	
+	private void setupMap() {
+		this.currentMap = new DungeonMap().generateMap();
+		
+		try {
+			ImageIO.write(this.currentMap, "png", new File("./output.png" ) );
+		}
+		catch ( Exception e ) {
+			e.printStackTrace();
+		}
+	}
+	
 	@Override
 	public void paint(Graphics g) {
 		super.paint(g);
 		
 		g.setFont(this.font);
+		
+		if ( this.currentMap != null ) {
+			g.drawImage( this.currentMap, 0, 0, this );
+		}
 		
 		g.drawImage( this.heartIcon, 10, 0, this );
 		g.drawImage( this.attackIcon, 160, 0, this );

@@ -19,25 +19,6 @@ public abstract class Pane2D extends JPanel {
 		loadResources();
 	}
 	
-	public BufferedImage loadImage( String resource ) {
-		
-		InputStream in = getClass().getClassLoader().getResourceAsStream(resource);
-		
-		if ( in != null ) {
-			
-			try {
-				BufferedImage image = ImageIO.read(in);
-				
-				return image;
-			}
-			catch ( Exception e ) {
-				e.printStackTrace();
-			}
-		}
-		
-		return null;
-	}
-	
 	protected void addEntity( Entity2D entity, int x, int y ) {
 		add( entity );
 		
@@ -45,6 +26,7 @@ public abstract class Pane2D extends JPanel {
 	}
 	
 	protected abstract void loadResources();
+	
 	public void hidePane () {
 		this.setVisible(false);
 	
