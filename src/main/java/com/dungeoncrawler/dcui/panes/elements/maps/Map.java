@@ -8,8 +8,6 @@ import java.awt.image.BufferedImage;
 import com.dungeoncrawler.dcui.util.Utility;
 
 public class Map {
-	
-	private static final long serialVersionUID = 1L;
 
 	private Tile[][] mapTiles = null;
 	

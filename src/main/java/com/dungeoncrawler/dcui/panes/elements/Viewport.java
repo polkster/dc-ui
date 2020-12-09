@@ -15,7 +15,6 @@ import com.dungeoncrawler.dcui.panes.actions.Actions;
 import com.dungeoncrawler.dcui.panes.actions.instructions.Instruction;
 import com.dungeoncrawler.dcui.panes.actions.instructions.MovementInstruction;
 import com.dungeoncrawler.dcui.panes.elements.maps.DungeonMap;
-import com.dungeoncrawler.dcui.panes.elements.maps.Map;
 import com.dungeoncrawler.dcui.util.Utility;
 
 public class Viewport extends Pane2D {
