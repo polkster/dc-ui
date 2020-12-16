@@ -10,5 +10,6 @@ public class BottomPane extends JTextArea {
 
 	public BottomPane() {
 		setBackground(Color.RED);
+		setEnabled(false);
 	}
 }

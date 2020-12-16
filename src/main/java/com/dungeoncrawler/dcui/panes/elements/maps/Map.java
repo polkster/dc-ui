@@ -21,6 +21,14 @@ public class Map {
 	public void setTile( int x, int y, BufferedImage tile, int rotation ) {
 		this.mapTiles[x][y] = new Tile( tile, rotation );
 	}
+	
+	public void setTileDirections( int x, int y, boolean north, boolean south, boolean east, boolean west ) {
+		this.mapTiles[x][y].setDirections(north, south, west, east);
+	}
+	
+	public Tile getTile( int x, int y ) {
+		return this.mapTiles[x][y];
+	}
 
 	public BufferedImage generateMap() {
 		

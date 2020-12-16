@@ -1,10 +1,7 @@
 package com.dungeoncrawler.dcui.panes;
 
 import java.awt.Point;
-import java.awt.image.BufferedImage;
-import java.io.InputStream;
 
-import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 import com.dungeoncrawler.dcui.entities.Entity2D;

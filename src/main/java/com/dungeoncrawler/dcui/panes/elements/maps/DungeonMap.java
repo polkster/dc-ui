@@ -31,8 +31,13 @@ public class DungeonMap extends Map {
 	
 	private void buildMap() {
 		
+		
 		this.setTile(0, 0, this.mapTileBend, Tile.ROTATION_90);
+		this.setTileDirections( 0, 0, false, true, true, false );
+		
 		this.setTile(1, 0, this.mapTileJunction, Tile.ROTATION_270);
+		this.setTileDirections(1, 0, false, true, true, true);
+		
 		this.setTile(2, 0, this.mapTileJunction, Tile.ROTATION_270);
 		this.setTile(3, 0, this.maptileStraight, Tile.ROTATION_90);
 		this.setTile(4, 0, this.mapTileBend, Tile.ROTATION_180);
@@ -53,8 +58,7 @@ public class DungeonMap extends Map {
 		this.setTile(3, 3, this.maptileStraight, Tile.ROTATION_90);
 		this.setTile(2, 3, this.mapTileBend, Tile.ROTATION_0);
 		
-		this.setTile(1, 3, this.maptileStraight, Tile.ROTATION_0);
-		
+		this.setTile(1, 3, this.maptileStraight, Tile.ROTATION_0);		
 		this.setTile(1, 4, this.mapTileBend, Tile.ROTATION_0);
 		this.setTile(2, 4, this.maptileStraight, Tile.ROTATION_90);
 		this.setTile(3, 4, this.maptileStraight, Tile.ROTATION_90);
