@@ -42,35 +42,57 @@ public class DungeonMap extends Map {
 		this.setTileDirections(2, 0, false, true, true, true);
 		
 		this.setTile(3, 0, this.maptileStraight, Tile.ROTATION_90);
-		this.setTileDirections(3,  0,  false, true, true, true);
+		this.setTileDirections(3,  0,  false, false, true, true);
 		
 		this.setTile(4, 0, this.mapTileBend, Tile.ROTATION_180);
-		this.setTileDirections(4,  0,  false, false, true, true);
+		this.setTileDirections(4,  0,  false, true, true, true);
 		
 		this.setTile(0, 1, this.mapTileJunction, Tile.ROTATION_180);
+		this.setTileDirections(0, 1,  true, false, true, false);
+		
 		this.setTile(1, 1, this.mapTileCrossroad, Tile.ROTATION_90);
+		this.setTileDirections(1, 1,  true, true, true, true);
+		
 		this.setTile(2, 1, this.mapTileCrossroad, Tile.ROTATION_0);
+		this.setTileDirections( 2, 1, true, true, true, true );
+		
 		this.setTile(3, 1, this.maptileStraight, Tile.ROTATION_90);
+		this.setTileDirections( 3, 1, false, false, true, true);
+		
 		this.setTile(4, 1, this.mapTileJunction, Tile.ROTATION_0);
+		this.setTileDirections( 4, 1, true, true, false, true);
 		
 		this.setTile(4, 2, this.maptileStraight, Tile.ROTATION_0);
-		this.setTile(4, 3, this.mapTileBend, Tile.ROTATION_270);
+		this.setTileDirections( 4, 2, true, true, false, false);
 		
+		this.setTile(4, 3, this.mapTileBend, Tile.ROTATION_270);
+		this.setTileDirections(4, 3, true, false, false, true);
 		
 		this.setTile(0, 2, this.mapTileBend, Tile.ROTATION_0); 
 		this.setTileDirections(0, 2, true, true, true, false);
 		
 		this.setTile(1, 2, this.mapTileCrossroad, Tile.ROTATION_0);
 		this.setTileDirections(1, 2, true, true, true, true);
+		
 		this.setTile(2, 2, this.mapTileJunction, Tile.ROTATION_0);
+		this.setTileDirections(2, 2, true, true, false, true);
+		
 		this.setTile(3, 3, this.maptileStraight, Tile.ROTATION_90);
+		this.setTileDirections(3, 3, false, false, true, true);
+		
 		this.setTile(2, 3, this.mapTileBend, Tile.ROTATION_0);
+		this.setTileDirections(2, 3, true, false, true, false);
 		
 		this.setTile(1, 3, this.maptileStraight, Tile.ROTATION_0);
-		this.setTileDirections(1, 2, true, true, true, false);
+		this.setTileDirections(1, 3, true, true, false, false);
+		
 		this.setTile(1, 4, this.mapTileBend, Tile.ROTATION_0);
+		this.setTileDirections(1, 4, true, false, true, false);
+		
 		this.setTile(2, 4, this.maptileStraight, Tile.ROTATION_90);
-		this.setTile(3, 4, this.maptileStraight, Tile.ROTATION_90);
+		this.setTileDirections(2,4, false,false,true,true);
+		
 		this.setTile(3, 4, this.mapTileBend, Tile.ROTATION_180);
+		this.setTileDirections(3, 4, false, true, false, true);
 	}
 }
